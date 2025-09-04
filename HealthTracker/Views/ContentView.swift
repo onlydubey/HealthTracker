@@ -9,11 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var splashViewModel = SplashViewModel()
+    @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding: Bool = false
 
     var body: some View {
         Group {
             if splashViewModel.isActive {
                 SplashView(viewModel: splashViewModel)
+            } else if !hasCompletedOnboarding {
+                OnboardingView()
             } else {
                 DashboardView()
             }

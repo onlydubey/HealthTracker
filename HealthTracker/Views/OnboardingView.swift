@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OnboardingView: View {
     @State private var animateIn = false
+    @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding: Bool = false
     
     var body: some View {
         VStack(spacing: 24) {
@@ -46,8 +47,7 @@ struct OnboardingView: View {
             
             // Get Started Button
             Button(action: {
-                print("Get Started tapped")
-                // Later: navigate to SignInView or HomeView
+                hasCompletedOnboarding = true
             }) {
                 Text("Get Started")
                     .font(.headline)

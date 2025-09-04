@@ -40,26 +40,14 @@ struct DashboardView: View {
 
 private struct DashboardHomeView: View {
     var body: some View {
-        ZStack {
-            LinearGradient(
-                colors: [AppColors.backgroundGradientStart, AppColors.backgroundGradientEnd],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .ignoresSafeArea()
-
             VStack(spacing: 12) {
                 Text("Today")
                     .font(AppFonts.title)
-                    .foregroundColor(AppColors.textPrimary)
-
                 Text("Your daily snapshot will appear here.")
                     .font(AppFonts.body)
-                    .foregroundColor(AppColors.textSecondary)
             }
         }
     }
-}
 
 #Preview {
     DashboardView()
